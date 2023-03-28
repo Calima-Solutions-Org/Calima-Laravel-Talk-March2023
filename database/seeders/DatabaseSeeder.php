@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Module;
+use App\Models\Note;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -25,5 +27,7 @@ class DatabaseSeeder extends Seeder
             AcademicYearSeeder::class,
             ModuleSeeder::class,
         ]);
+
+        Note::factory(50)->for(Module::inRandomOrder()->first())->create();
     }
 }

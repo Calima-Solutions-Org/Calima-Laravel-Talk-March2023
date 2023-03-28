@@ -1,3 +1,13 @@
+@php
+    $colors = [
+        'danger' => \Filament\Support\Color::Red,
+        'gray' => \Filament\Support\Color::Gray,
+        'primary' => \Filament\Support\Color::Violet,
+        'success' => \Filament\Support\Color::Green,
+        'warning' => \Filament\Support\Color::Amber,
+    ];
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -12,11 +22,27 @@
         <style>[x-cloak] { display: none !important; }</style>
         @livewireStyles
         @filamentStyles
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=be-vietnam-pro:400,500,600,700" rel="stylesheet" />
         @vite('resources/css/app.css')
+
+        <style>
+            :root {
+                --font-family: 'Be Vietnam Pro';
+
+                @foreach ($colors as $key => $palette)
+                    @foreach ($palette as $shade => $color)
+                        --{{ $key }}-color-{{ $shade }}: {{ $color }};
+                    @endforeach
+                @endforeach
+            }
+        </style>
     </head>
 
-    <body class="antialiased">
+    <body class="bg-gray-50 text-gray-900 antialiased">
         {{ $slot }}
+
+        @livewire('notifications')
 
         @livewireScripts
         @filamentScripts

@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('filament.admin.auth.login');
-});
-Route::get('/login', function () {
-    return redirect()->route('filament.admin.auth.login');
-})->name('login');
+Route::get('/', \App\Http\Livewire\Notes\ListNotes::class)->name('notes.index');
+
+Route::get('/notes/{note}', \App\Http\Livewire\Notes\ListNotes::class)->name('notes.view'); // fake route which is not accessed

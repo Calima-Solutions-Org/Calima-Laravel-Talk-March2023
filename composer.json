@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.1",
         "doctrine/dbal": "^3.6",
-        "filament/filament": "^3.0",
+        "filament/filament": "v3.0.0-alpha69",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
@@ -64,6 +64,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "alpha",
     "prefer-stable": true
 }
