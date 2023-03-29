@@ -23,7 +23,7 @@ class ListNotes extends Component implements HasActions
     {
         return view('livewire.notes.list-notes', [
             'notes' => Note::with('files')
-                ->when(!empty($this->query), fn ($query) => $query->where('name', 'like', '%'.$this->query.'%'))
+                ->when(! empty($this->query), fn ($query) => $query->where('name', 'like', '%'.$this->query.'%'))
                 ->orderBy('votes', 'desc')
                 ->get(),
         ]);
