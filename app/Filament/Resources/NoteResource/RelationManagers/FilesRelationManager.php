@@ -2,11 +2,11 @@
 
 namespace App\Filament\Resources\NoteResource\RelationManagers;
 
-use Filament\Forms\Form;
 use Filament\Forms;
+use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Tables\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 
 class FilesRelationManager extends RelationManager
 {

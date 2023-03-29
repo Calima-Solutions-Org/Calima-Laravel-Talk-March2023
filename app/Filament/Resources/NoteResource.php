@@ -6,11 +6,11 @@ use App\Filament\Resources\NoteResource\Pages;
 use App\Filament\Resources\NoteResource\RelationManagers\FilesRelationManager;
 use App\Filament\Resources\NoteResource\RelationManagers\UsersRelationManager;
 use App\Models\Note;
-use Filament\Forms\Form;
 use Filament\Forms;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 
 class NoteResource extends Resource
 {
