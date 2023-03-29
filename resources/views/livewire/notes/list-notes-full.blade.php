@@ -31,9 +31,9 @@
 
                 <footer class="-mb-4 -mx-2 mt-4 flex justify-between">
                     <div class="flex items-center">
-                        {{-- Upvote action --}}
+                        {{ ($this->upvoteAction)(['note' => $note->id]) }}
 
-                        {{-- Downvote action --}}
+                        {{ ($this->downvoteAction)(['note' => $note->id]) }}
 
                         <span class="ml-3 text-sm text-gray-500">
                             {{ $note->votes }}
@@ -41,9 +41,9 @@
                     </div>
 
                     <div class="flex">
-                        {{-- Share actions --}}
+                        {{ $this->shareActionGroup($note) }}
 
-                        {{-- Report action --}}
+                        {{ ($this->reportAction)(['note' => $note->id]) }}
                     </div>
                 </footer>
             </article>
