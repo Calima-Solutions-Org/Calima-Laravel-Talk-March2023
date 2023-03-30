@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Note;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', \App\Http\Livewire\Notes\ListNotes::class)->name('notes.index');
-
-Route::get('/notes/{note}', \App\Http\Livewire\Notes\ListNotes::class)->name('notes.view'); // fake route which is not accessed
+Route::get('/', function () {
+    return view('notes.index', [
+        'notes' => Note::with('files')->get(),
+    ]);
+})->name('notes.index');

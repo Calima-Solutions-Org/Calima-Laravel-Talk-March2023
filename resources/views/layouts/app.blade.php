@@ -40,7 +40,7 @@
     </head>
 
     <body class="bg-gray-50 text-gray-900 antialiased">
-        {{ $slot }}
+        @yield('body')
 
         @livewire('notifications')
 

@@ -28,27 +28,7 @@
                         @endforeach
                     </ul>
                 @endif
-
-                <footer class="-mb-4 -mx-2 mt-4 flex justify-between">
-                    <div class="flex items-center">
-                        {{ ($this->upvoteAction)(['note' => $note->id]) }}
-
-                        {{ ($this->downvoteAction)(['note' => $note->id]) }}
-
-                        <span class="ml-3 text-sm text-gray-500">
-                            {{ $note->votes }}
-                        </span>
-                    </div>
-
-                    <div class="flex">
-                        {{ $this->shareActionGroup($note) }}
-
-                        {{ ($this->reportAction)(['note' => $note->id]) }}
-                    </div>
-                </footer>
             </article>
         @endforeach
-
-        <x-filament-actions::modals />
     </div>
 </div>
