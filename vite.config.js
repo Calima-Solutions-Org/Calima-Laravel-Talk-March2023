@@ -12,7 +12,6 @@ export default defineConfig({
                 'app/Http/Livewire/**',
                 'app/Tables/Columns/**',
             ],
-            valetTls: true,
         }),
     ],
 })
